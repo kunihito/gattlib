@@ -28,4 +28,4 @@ pkg_search_module(GATTLIB REQUIRED gattlib)
 set(advertisement_data_SRCS advertisement_data.c)
 
 add_executable(advertisement_data ${advertisement_data_SRCS})
-target_link_libraries(advertisement_data ${GATTLIB_LIBRARIES} ${GATTLIB_LDFLAGS})
+target_link_libraries(advertisement_data ${GATTLIB_LIBRARIES} ${GATTLIB_LDFLAGS} pthread)
