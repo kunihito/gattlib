@@ -129,7 +129,7 @@ static void device_manager_on_device1_signal(const char* device1_path, struct di
 		const gchar *address = org_bluez_device1_get_address(device1);
 
 		// Sometimes org_bluez_device1_get_address returns null addresses. If that's the case, early return.
-		if (address == NULL) {
+		if (arg == NULL || arg->discovered_devices_ptr == NULL || address == NULL) {
 			g_object_unref(device1);
 			return;
 		}
