@@ -118,8 +118,9 @@ static void device_manager_on_device1_signal(const char* device1_path, struct ga
 		const gchar *address = org_bluez_device1_get_address(device1);
 
 		// Sometimes org_bluez_device1_get_address returns null addresses. If that's the case, early return.
-		if (address == NULL) {
-			g_object_unref(device1);
+    if (address == NULL) {
+    //if (gattlib_adapter == NULL || gattlib_adapter->ble_scan.discovered_devices == NULL || address == NULL)
+      g_object_unref(device1);
 			return;
 		}
 
